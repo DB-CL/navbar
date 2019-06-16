@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>DBCL - test navbar</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/system.min.js"
+        integrity="sha256-EXPoZ0hFaPyedGmYJYNsQJZBXH7be91OP4bcWfkWlJw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/extras/named-exports.min.js"
+        integrity="sha256-QWoPIS8TaCW+WRX/XQj4iwOmfKLWgJ+zbZn4vsAx5xw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/extras/named-register.js"
+        integrity="sha256-7hzP5uCAMfIXDwJKAcAGT5epvxp/O2q9Mtq6p+Doca8=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var DEV = true;
+        System.import('/dbcl-navbar.user.system.js').then(function () {
+            System.import("index");
+        });
+
+    </script>
+</body>
+
+</html>

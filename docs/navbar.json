@@ -1,0 +1,42 @@
+{
+    "width": 220,
+    "iconSize": 24,
+    "title": "DBCL Links",
+    "apps": [
+        {
+            "name": "AirSonic",
+            "icon": "airsonic",
+            "url": "http://localhost:3000/"
+        },
+        {
+            "name": "Bitwarden",
+            "icon": "bitwarden",
+            "url": "https://www.example.com/bitwarden"
+        },
+        {
+            "name": "Dokuwiki",
+            "icon": "dokuwiki",
+            "url": "https://www.example.com/dokuwiki"
+        },
+        {
+            "name": "Radarr",
+            "icon": "radarr",
+            "url": "https://www.example.com/radarr"
+        },
+        {
+            "name": "Nextcloud",
+            "icon": "nextcloud",
+            "url": "https://www.example.com/nextcloud"
+        },
+        {
+            "name": "Emby",
+            "icon": "emby",
+            "url": "https://www.example.com/emby"
+        },
+        {
+            "name": "Plex",
+            "icon": "plex",
+            "url": "https://www.example.com/plex"
+        }
+    ]
+}

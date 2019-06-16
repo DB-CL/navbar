@@ -1,0 +1,14 @@
+// ==UserScript==
+// @name         DBCL Navbar
+// @namespace    DBCL
+// @version      __VERSION__
+// @description  A navbar to inject into your personal applications
+// @author       DBCL
+// @match        https://www.example.com/*
+// @downloadURL  https://github.com/DB-CL/navbar/releases/latest/download/dbcl-navbar.user.js
+// @updateURL    https://github.com/DB-CL/navbar/releases/latest/download/dbcl-navbar.user.js
+// @supportURL   https://github.com/DB-CL/navbar/releases/latest/download/dbcl-navbar.user.js
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_xmlhttpRequest
+// ==/UserScript==

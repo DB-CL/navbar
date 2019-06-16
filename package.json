@@ -1,0 +1,38 @@
+{
+    "name": "dbcl-navbar",
+    "version": "1.0.1",
+    "description": "A navbar injected with userscripts",
+    "scripts": {
+        "lint": "tslint --project tslint.json ./src/*.ts",
+        "browserify": "browserify dist/ -o dist/dbcl-navbar.user.es6.js",
+        "babel": "npx babel dist/dbcl-navbar.user.es6.js > dist/dbcl-navbar.user.es5.js",
+        "uglify": "uglifyjs dist/dbcl-navbar.user.es5.js > dist/dbcl-navbar.user.min.js",
+        "copy-headers": "cat header-userscript > dist/dbcl-navbar.user.js && cat dist/dbcl-navbar.user.min.js >> dist/dbcl-navbar.user.js",
+        "version": "PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && sed -i \"s/__VERSION__/${PACKAGE_VERSION}/g\" dist/dbcl-navbar.user.js",
+        "build": "npm run lint && tsc && npm run browserify && npm run babel && npm run uglify && npm run copy-headers && npm run version",
+        "browsersync": "browser-sync start -f \"docs\" -s \"docs\" --index \"index.html\" --no-open",
+        "watch-ts": "tsc --target es6 --module system --outFile docs/dbcl-navbar.user.system.js -w",
+        "serve": "npm run watch-ts & npm run browsersync"
+    },
+    "author": "DBCL",
+    "licence": "MIT",
+    "devDependencies": {
+        "@babel/cli": "^7.4.3",
+        "@babel/core": "^7.4.3",
+        "@babel/polyfill": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "@types/node": "^11.13.8",
+        "@types/tampermonkey": "^4.0.0"
+    },
+    "browserslist": "> 0.25%, not dead",
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-env"
+            ]
+        ]
+    },
+    "dependencies": {
+        "@types/greasemonkey": "^4.0.0"
+    }
+}
