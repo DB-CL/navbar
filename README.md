@@ -1,4 +1,4 @@
-# DBCL-Navbar
+# Navbar
 
 A userscript to inject a menu into my self hosted services.
 
