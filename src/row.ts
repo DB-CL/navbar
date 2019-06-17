@@ -34,7 +34,7 @@ export class Row {
         this.build();
     }
 
-    private build() {
+    private async build() {
         this._row.style.width = '100%px';
         this._row.style.height = '40px';
         this._row.style.display = 'flex';
@@ -63,8 +63,16 @@ export class Row {
             this._row.style.borderLeft = '3px solid transparent';
         }
 
-        const url = (Row.validURL(this.icon)) ? this.icon : Environment.getInstance().url + '/assets/apps/' + this.icon + '.png';
-        this._icon.style.backgroundImage = 'url(' + url + ')';
+        let url: string;
+        if (Environment.getInstance().devMode === true) {
+            url = (Row.validURL(this.icon)) ? this.icon : Environment.getInstance().url + '/assets/apps/64x/' + this.icon + '.png';
+            this._icon.style.backgroundImage = 'url(' + url + ')';
+        } else {
+            (async () => {
+                url = (Row.validURL(this.icon)) ? this.icon : await GM_getResourceURL(this.icon);
+                this._icon.style.backgroundImage = 'url(' + url + ')';
+            })();
+        }
         this._icon.style.border = '0';
         this._icon.style.backgroundColor = 'transparent';
         this._icon.style.backgroundRepeat = 'no-repeat';

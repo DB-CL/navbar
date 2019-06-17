@@ -66,6 +66,7 @@ export class Menu {
         this._html.style.display = 'flex';
         this._html.style.flexDirection = 'column';
         this._html.style.backgroundColor = '#333333';
+        this._html.style.zIndex = '99999';
 
         const body = document.querySelector('body');
         if (body) {
@@ -158,7 +159,14 @@ export class Menu {
         header.style.alignItems = 'center';
 
         const icon = document.createElement('img');
-        icon.src = env.getInstance().url + '/assets/fa-menu.png';
+        if (env.getInstance().devMode === true) {
+            icon.src = env.getInstance().url + '/assets/fa-menu.png';
+        } else {
+            (async () => {
+                icon.src = await GM_getResourceURL('fa-menu');
+            })();
+        }
+
         icon.style.height = '20px';
         icon.style.width = '20px';
         icon.style.margin = '10px ' + (this.iconSize / 2) + 'px';
@@ -178,7 +186,13 @@ export class Menu {
         header.appendChild(title);
 
         const foldIcon = document.createElement('img');
-        foldIcon.src = env.getInstance().url + '/assets/fa-arrow-up.png';
+        if (env.getInstance().devMode === true) {
+            foldIcon.src = env.getInstance().url + '/assets/fa-arrow-up.png';
+        } else {
+            (async () => {
+                foldIcon.src = await GM_getResourceURL('fa-arrow-up');
+            })();
+        }
         foldIcon.style.height = '10px';
         foldIcon.style.width = '10px';
         foldIcon.style.margin = '10px';

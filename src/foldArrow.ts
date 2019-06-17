@@ -15,7 +15,7 @@ export class FoldArrow {
         this.build();
     }
 
-    private build() {
+    private async build() {
         this._html.style.position = 'fixed';
         this._html.style.top = '-3px';
         this._html.style.left = '10px';
@@ -26,9 +26,14 @@ export class FoldArrow {
         this._html.style.justifyContent = 'center';
         this._html.style.alignItems = 'center';
         this._html.style.borderRadius = '3px';
+        this._html.style.zIndex = '99999';
 
         const arrowIcon = document.createElement('img');
-        arrowIcon.src = env.getInstance().url + '/assets/fa-arrow-down.png';
+        if (env.getInstance().devMode === true) {
+            arrowIcon.src = env.getInstance().url + '/assets/fa-arrow-down.png';
+        } else {
+            arrowIcon.src = await GM_getResourceURL('fa-arrow-down');
+        }
         arrowIcon.style.height = '10px';
         arrowIcon.style.width = '10px';
         arrowIcon.style.marginTop = '3px';

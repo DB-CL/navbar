@@ -1,6 +1,6 @@
 {
     "name": "dbcl-navbar",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A navbar injected with userscripts",
     "scripts": {
         "lint": "tslint --project tslint.json ./src/*.ts",
@@ -33,6 +33,7 @@
         ]
     },
     "dependencies": {
-        "@types/greasemonkey": "^4.0.0"
+        "@types/greasemonkey": "^4.0.0",
+        "babel-polyfill": "^6.26.0"
     }
 }

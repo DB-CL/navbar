@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import { Menu, MenuData } from './menu';
 import { Environment } from './environment';
 import { Row } from './row';
