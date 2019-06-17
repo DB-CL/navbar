@@ -6,7 +6,7 @@ I made this little script because I do not like muximux, organizr & co.
 
 The menu has 3 positions
 
-<img src="https://db-cl.github.io/navbar/screen1.png" width="200"> <img src="https://db-cl.github.io/navbar/screen2.png" width="200"> <img src="https://db-cl.github.io/navbar/screen3.png" width="200">
+<img src="https://db-cl.github.io/navbar/screen1.png" width="300"> <img src="https://db-cl.github.io/navbar/screen2.png" width="300"> <img src="https://db-cl.github.io/navbar/screen3.png" width="300">
 
 You just have to create a JSON configuration file and install the script with tampermonkey. It will parse the JSON file and inject a menu in every page you want to. 
 
